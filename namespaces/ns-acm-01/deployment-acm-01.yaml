@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deployment-acm-01
+  name: deployment-acm-01
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployment-acm-01
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deployment-acm-01
+    spec:
+      containers:
+      - image: gcr.io/cloudrun/hello:latest
+        name: hello
+        resources: {}
+status: {}
